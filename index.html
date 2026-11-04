@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <title>Student Attendance Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="loginScreen" class="login">
+    <div class="login-card">
+
+        <div class="logo">A</div>
+
+        <h1>Attendance Manager</h1>
+        <p>Student Attendance Management System</p>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+                <label>Username</label>
+                <input
+                    id="loginUser"
+                    type="text"
+                    placeholder="Enter username or Matric No. (e.g. STU001)"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <label style="margin-bottom: 0;">Password</label>
+                    <a href="#" onclick="openForgotPasswordModal(event)" style="font-size: 12px; color: var(--primary); text-decoration: none; font-weight: 700;">Forgot Password?</a>
+                </div>
+                <input
+                    id="loginPass"
+                    type="password"
+                    placeholder="Enter password"
+                    required
+                >
+            </div>
+
+            <button class="btn btn-primary login-btn">
+                Sign In
+            </button>
+
+        </form>
+
+        <div style="margin-top: 15px; border-top: 1px solid var(--border); padding-top: 15px; text-align: center;">
+            <p style="font-size: 13px; margin-bottom: 8px;">Are you a student?</p>
+            <button type="button" class="btn btn-success" style="width: 100%; margin-bottom: 8px;" onclick="openStudentPortal()">
+                Mark Attendance
+            </button>
+            <button type="button" class="btn" style="width: 100%;" onclick="openStudentRegModal()">
+                Register Courses
+            </button>
+        </div>
+
+        <p class="login-help">
+            <b>Admin:</b> admin / admin123<br>
+            <b>Lecturer:</b> lecturer / lec123<br>
+            <b>Student:</b> Use Matric No. (e.g. STU001) as username & password
+        </p>
+
+    </div>
+</div>
+
+<div id="app" class="app hidden">
+
+    <aside id="sidebar" class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                A
+            </div>
+
+            <div>
+                <strong>AttendPro</strong>
+                <small>Management System</small>
+            </div>
+
+        </div>
+
+
+        <div class="nav" id="sidebarNav">
+            
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu"
+                    onclick="toggleSidebar()">
+                    ☰
+                </button>
+
+                <h2 id="topTitle">
+                    Dashboard
+                </h2>
+
+            </div>
+
+
+            <div class="user-chip">
+
+                <div>
+                    <b id="sessionName">
+                        Administrator
+                    </b>
+
+                    <small
+                        id="sessionRole">
+                        Admin
+                    </small>
+                </div>
+
+                <div
+                    class="avatar"
+                    id="sessionAvatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+        <section
+            id="content"
+            class="content">
+        </section>
+
+    </main>
+
+</div>
+
+<div id="modal" class="modal">
+
+    <div
+        class="modal-box"
+        id="modalBox">
+    </div>
+
+</div>
+
+<div
+    id="toast"
+    class="toast">
+</div>
+<script src="app.js"></script>
+
+</body>
+</html>
